@@ -4,14 +4,57 @@
         <meta charset="utf-8">
         <title> daboard with angular/firebase</title>
         <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
-    
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/styles/style.css">
+
+        <style media="screen">
+            
+        body {
+            display: inline-flex;
+            min-height: inherit;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            align: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        #uploader {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 50%;
+            margin-bottom: 10px;
+        }
+        </style>
     </head>
     <body>
+        
+        <progress value="0" max="100" id="uploader">0%</progress>
+        <input type="file" value="upload" id="fileButton" />
+        
+        
 <!--    Value-->
-        <pre id="card">
-        </pre>
+        <pre id="player"></pre>
+        <pre id="holenumber"></pre>
+        <pre id="teetime"></pre>
+        <pre id="rounds"></pre>
         
 <!--        child-->
+        
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+        <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.3/ui-bootstrap-tpls.min.js"></script>
+        <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.13/angular-ui-router.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular-cookies.js"></script>
+      
         <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/HomeCtrl.js"></script> 
+        <script src="scripts/controllers/ModalCtrl.js"></script>
+        <script src="scripts/services/player.js"></script>
+        
     </body>
 </html>

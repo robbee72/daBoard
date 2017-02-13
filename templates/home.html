@@ -1,0 +1,29 @@
+<section>
+<div class="col-md-3 sidebar">
+    <div class="header">
+        <h2 class="title">Leaders</h2>
+        <div class="new-leader-board">
+            <button class="btn btn-primary" ng-click="home.openModal()"> New Leaderboard</button>
+        </div>
+    </div>
+        <section class="players-list">
+            <div ng-repeat="player in home.daPlayers" class="leaderPlayers">
+                <a ng-click="home.selectPlayer(player)">{{ player.name }}</a>   
+            </div>
+        </section>
+
+    
+</div>
+</section>
+
+<div class="col-md-9 daplayer">
+	<h3>{{ home.selectedPlayer.name }}</h3>
+	<table class="table teetime">
+        <tr ng-repeat="teetime in home.teetimes">
+            <td > {{ teetime.name }}</td>
+            <td > {{ teetime.content }}</td>
+            <td > {{ teetime.sentAt }}</td>
+        </tr> 
+    </table>
+	
+</div>

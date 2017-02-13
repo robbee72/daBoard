@@ -1,0 +1,89 @@
+
+
+.app-heading {
+   color: white;
+   font-size: 3em;
+ }
+ 
+ .da-rooms {
+  right: 0%;
+  width: 15%;
+  background: #4E41FF;
+  position: fixed;
+  height: 60%;
+  color: white;
+  text-align: right;
+ }
+ 
+ .hr {
+   padding-top: 5px;
+   margin-top: 10px;
+ 	border-top: 3px solid white;
+ }
+
+.da-screen {
+  margin-left: 10%;
+  width: 35%;
+  height: 80%;
+  background-color: white;
+  color: grey;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  opacity: 0.75;
+}
+.hr-grey {
+  padding-top: 5px;
+  margin-top: 10px;
+	border-top: 3px solid grey;
+}
+
+.da-heading {
+  padding-top: 20px;
+}
+
+.input-group {
+  padding-top: 10px;
+}
+
+.messages {
+    
+    margin-top: 10px;
+    align-content: center;
+}
+
+
+
+.sidebar {
+	clear: both;
+    background-color: #FF8F1C;
+	height: 300px;
+    column-width: auto;
+    
+}
+
+.sidebar .header {
+/*    margin: auto;*/
+	padding-top: 15px;
+}
+
+.sidebar .header .title {
+    color: lightskyblue;
+	text-align: center;
+	font-size: 30px;
+}
+
+.sidebar .header .new-da-room {
+    color: crimson;
+    text-align: center;
+}
+
+.sidebar .rooms-list {
+    margin: auto;
+	padding-top: 15px;
+}
+
+.sidebar .rooms-list .darooms {
+    
+	text-align: center;
+}

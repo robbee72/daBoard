@@ -2,32 +2,92 @@
     
     //Initialize Firebase
      var config = {
-    apiKey: "AIzaSyCaQDcPtYwnFpPeYgO7a6aksAwEX4EqiLk",
-    authDomain: "daboard-ffc6d.firebaseapp.com",
-    databaseURL: "https://daboard-ffc6d.firebaseio.com",
-    storageBucket: "daboard-ffc6d.appspot.com",
-    messagingSenderId: "550561463842"
+        apiKey: "AIzaSyCaQDcPtYwnFpPeYgO7a6aksAwEX4EqiLk",
+        authDomain: "daboard-ffc6d.firebaseapp.com",
+        databaseURL: "https://daboard-ffc6d.firebaseio.com",
+        storageBucket: "daboard-ffc6d.appspot.com",
+        messagingSenderId: "550561463842"
   };
-  firebase.initializeApp(config);
+ 
     
-    //get elements
-    const preCard = document.getElementById('card');
+    firebase.initializeApp(config);
     
-    // Create references
-    const dbRefCard = firebase.database().ref().child('card');
-     
-    //Sync card changes
+    // GET ELEMENTS 
+    var uploader = document.getElementById('uploader');
+    var fileButton = document.getElementById('fileButton');
     
-    dbRefCard.on('value', snap => {
-        preCard.innerText= JSON.stringify(snap.val(), null, 3);
+    // Listen for file selection
+    fileButton.addEventListener('change', function(e) {
+        
+    // Get file    
+    var file = e.target.files[0];
+        
+    // Create a storage ref    
+    var storageRef = firebase.storage().ref('players/' + file.name);
+        
+    // Upload file
+    var task = storageRef.put(file);
+    
+    // Update progress bar
+        task.on('state_changed',
+           
+            function progress(snapshot) {
+                var percentage = (snapshot.byteTransferred / snapshot.totalBytes) * 100;
+                uploader.value = percentage;
+                                 
+            },
+            
+            function error(err) {
+            },
+            
+            function complete() {
+        
+            }
+        );    
         
     });
     
-    const preholeNumber = document.getElementById('holeNumber');
     
-    const dbRefholeNumber = firebase.database().ref().child('holeNumber');
-    dbRefholeNumber.on('value', snap => {
-        preholeNumber.innerText = JSON.stringify(snap.val(), null, 3);
+    
+    
+    //get elements for player
+    const prePlayer = document.getElementById('player');
+    
+    // Create references
+    const dbRefPlayer = firebase.database().ref().child('player');
+     
+    //Sync player changes
+    
+    dbRefPlayer.on('value', snap => {
+        prePlayer.innerText= JSON.stringify(snap.val(), null, 3);
+        
     });
     
+    
+    
+    //get elements for hole number
+    const preholenumber = document.getElementById('holenumber');
+    // Create references
+    const dbRefholenumber = firebase.database().ref().child('holenumber');
+    dbRefholenumber.on('value', snap => {
+        preholenumber.innerText = JSON.stringify(snap.val(), null, 3);
+    });
+    
+    //get elements for tee time
+    const preteetime = document.getElementById('teetime');
+    // Create references
+    const dbRefteetime = firebase.database().ref().child('teetime');
+    //Sync card changes
+    dbRefteetime.on('value', snap => {
+        preteetime.innerText = JSON.stringify(snap.val(), null, 3);
+    });
+    
+    //get elements for Rounds
+    const prerounds = document.getElementById('rounds');
+    // Create references
+    const dbRefrounds = firebase.database().ref().child('rounds');
+    //Sync card changes
+    dbRefrounds.on('value', snap => {
+        prerounds.innerText = JSON.stringify(snap.val(), null, 3);
+    });
 }());
