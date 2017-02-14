@@ -6,6 +6,6 @@
     };
     
     angular
-        .module('daBoard')
+        .module('myApp')
         .factory('Modal', [Modal]);
 })();

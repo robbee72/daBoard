@@ -36,6 +36,6 @@
 	}
 	
 	angular
-		.module('daBoard')
+		.module('myApp')
 		.factory('Teetime', ['$firebaseArray',  TeeTime]);
 })();

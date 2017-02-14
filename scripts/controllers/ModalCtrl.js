@@ -14,6 +14,6 @@
             
     
     angular
-        .module('daBoard')
+        .module('myApp')
         .controller('ModalCtrl', ['$uibModal', ModalCtrl]);
 })();

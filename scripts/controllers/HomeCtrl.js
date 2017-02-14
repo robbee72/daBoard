@@ -1,7 +1,7 @@
 (function() {
     function HomeCtrl(Player,  $uibModal) {
-      //  this.daplayers = Player.all;  
-      // var Home = this; 
+      this.daplayers = Player.all;  
+       var Home = this; 
         Home.playerService = Player;
         Home.selectPlayer = function(player) {
             Home.selectedPlayer = player;
@@ -20,6 +20,6 @@
         }                
     }
     angular
-        .module('daBoard')
+        .module('myApp')
         .controller('HomeCtrl',  ['Player', '$uibModal', HomeCtrl]);
 })();
