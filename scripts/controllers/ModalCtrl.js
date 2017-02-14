@@ -1,7 +1,7 @@
 (function() {
     function ModalCtrl($uibModalInstance, $scope, Player) {
         $scope.newPlayer = {};
-        $scope.newPlayer.name = "   ";
+        $scope.newPlayer.name = " Enter Player Name Here: ";
         
             $scope.closeModal = function(){
                 $uibModalInstance.close()
@@ -15,5 +15,5 @@
     
     angular
         .module('daBoard')
-        .controller('ModalCtrl', ModalCtrl);
+        .controller('ModalCtrl', ['$uibModal', ModalCtrl]);
 })();

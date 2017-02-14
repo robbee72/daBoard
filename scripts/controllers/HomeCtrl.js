@@ -1,6 +1,6 @@
 (function() {
     function HomeCtrl(Player, $uibModal) {
-        this.daPlayers = Player.all;  
+        this.daplayers = Player.all;  
         var Home = this; 
         Home.playerService = Player;
         Home.selectPlayer = function(player) {
@@ -8,13 +8,14 @@
             Home.teetimes = Player.getTeetimes(this.selectedPlayer.$id);
         }  
         this.openModal = function() {
-            var modalInstance = $uibModal.open({
+             var modalInstance = $uibModal.open({
                templateUrl: '/templates/modal.html',
                 controller: "ModalCtrl"
                        });   
-       modalInstance.result.then(function (selectedItem) {
+                
+                modalInstance.result.then(function (selectedItem) {
                 this.selected = selectedItem;
-        Home.playerService.addPlayer(selectedItem);
+                Home.playerService.addPlayer(selectedItem);
                 });
         }                
     }

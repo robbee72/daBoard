@@ -1,5 +1,5 @@
 (function() {
-	function Message($firebaseArray, ) {
+	function TeeTime($firebaseArray, ) {
 		var firebaseRef = new Firebase("https://daboard-ffc6d.firebaseio.com/");
 		var teetimeRef = $firebaseArray(firebaseRef.child('teetimes'));
 		
@@ -10,7 +10,7 @@
 					sentAt: timeFormat(),
 					playerID: playerID
 				}
-				messageRef.$add(message);
+				messageRef.$add(teetime);
 			}
 		};
 		

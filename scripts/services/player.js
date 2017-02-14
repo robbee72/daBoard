@@ -5,7 +5,7 @@
         var players ={
             getPlayers: getPlayers,
             addPlayer: addPlayer,
-            removePlayer: removePlayer,
+          //  removePlayer: removePlayer,
             getTeeTimes: getTeeTimes,
             all: playerRef
         
@@ -31,5 +31,5 @@
 }
 	angular
 		.module('daBoard')
-		.factory('player', ['$firebaseArray', Player]);
+		.factory('Player', ['$firebaseArray', Player]);
 })();
