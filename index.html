@@ -1,68 +1,67 @@
 <!DOCTYPE html>
-<html ng-app="daBoard" class="ng-scope">
-    <head lang="en">
+<html class="no-js" ng-app="myApp"> 
+    <head >
         <meta charset="utf-8">
+         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title> daboard with angular/firebase</title>
-        <link rel="stylesheet" type="text/css" href="/styles/style.css">
-
-        
-       
-        
-
-        <style media="screen">
+        <meta name="description" content="">
+        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" href="styles/css/style.css">
+        <script src="js/build/libs.js"></script>
+        <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+        <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+        <script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.js"></script>
+        <script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.2.1/firebase-simple-login.js'></script>
             
-        body {
-            display: inline-flex;
-            min-height: inherit;
-            width: 100%;
-            padding: 0;
-            margin: 0;
-            align: center;
-            justify-content: center;
-            flex-direction: column;
-        }
+        <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
 
-        #uploader {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 50%;
-            margin-bottom: 10px;
-        }
-        </style>
     </head>
     <body>
+        <div class="row">
+            <div class="small-12 columns">
+                <h1><i class="fa fa-archive"></i> AngularFire CRUD</h1>
+            </div>
+        </div>
+          <div ng-view></div>
+    
+        
       <h2> Upload to firebase storage</h2>
         <br>
         
         <progress value="0" max="100" id="uploader">0%</progress>
         <input type="file" value="upload" id="fileButton" />
-        <br>
-        
-        
-        </br
-        
-        
+       
   
-        <pre id="player"></pre>
-        <pre id="holenumber"></pre>
-        <pre id="teetime"></pre>
-        <pre id="rounds"></pre>
+        <pre id="player">1</pre>
+        <pre id="holenumber">2</pre>
+        <pre id="teetime">3</pre>
+        <pre id="rounds">4</pre>
         
-    
+        <script src="js/src/app.js"></script>
+        <script src="js/build/controllers.js"></script>
+        <script src="js/build/services.js"></script>
+
+<!--
         
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
         <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+-->
 <!--        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.3/ui-bootstrap-tpls.min.js"></script>-->
+
         <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.13/angular-ui-router.min.js"></script>
+
 <!--        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular-cookies.js"></script>-->
+
       
         <script src="/scripts/app.js"></script>
         <script src="/scripts/controllers/HomeCtrl.js"></script> 
         <script src="/scripts/controllers/ModalCtrl.js"></script>
         <script src="/scripts/services/Player.js"></script>
         <script src="/scripts/services/Modal.js"></script>
+
     </body>
 </html>

@@ -1,5 +1,5 @@
 (function() {
-    function Modal($uibModal) {
+    function Modal() {
         function newDaPlayer() {
             
         }
@@ -7,5 +7,5 @@
     
     angular
         .module('daBoard')
-        .factory('Modal', ['$uibModal', Modal]);
+        .factory('Modal', [Modal]);
 })();

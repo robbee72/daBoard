@@ -1,0 +1,37 @@
+{
+  "name": "ui",
+  "version": "0.0.1",
+  "dependencies": {
+    "grunt-connect-pushstate": "^0.2.0"
+  },
+  "devDependencies": {
+    "connect-modrewrite": "*",
+    "grunt": "~0.4.1",
+    "grunt-concurrent": "~0.4.1",
+    "grunt-connect-pushstate": "*",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-connect": "~0.5.0",
+    "grunt-contrib-less": "*",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-watch": "~0.5.2",
+    "grunt-mkdir": "*",
+    "grunt-modernizr": "~0.4.1",
+    "grunt-newer": "~0.5.4",
+    "grunt-ngmin": "~0.0.2",
+    "karma": "~0.10.8",
+    "karma-chrome-launcher": "~0.1.1",
+    "karma-firefox-launcher": "~0.1.2",
+    "karma-jasmine": "~0.1.4",
+    "karma-phantomjs-launcher": "~0.1.1",
+    "karma-script-launcher": "~0.1.0",
+    "less": "*",
+    "load-grunt-tasks": "^0.2.1",
+    "time-grunt": "~0.2.1"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  }
+}

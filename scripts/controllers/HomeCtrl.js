@@ -1,7 +1,7 @@
 (function() {
-    function HomeCtrl(Player, $uibModal) {
-        this.daplayers = Player.all;  
-        var Home = this; 
+    function HomeCtrl(Player,  $uibModal) {
+      //  this.daplayers = Player.all;  
+      // var Home = this; 
         Home.playerService = Player;
         Home.selectPlayer = function(player) {
             Home.selectedPlayer = player;
