@@ -1,11 +1,11 @@
 (function() {
     function Player($firebaseArray) {
-        var firebaseRef = new Firebase("https://daboard-ffc6d.firebaseio.com/");
+        var firebaseRef = new Firebase("https://daboard-ffc6d.firebaseio.com/users");
         var playerRef = $firebaseArray(firebaseRef.child('players'));
         var players ={
             getPlayers: getPlayers,
             addPlayer: addPlayer,
-            removePlayer: removePlayer,
+          //  removePlayer: removePlayer,
             getTeeTimes: getTeeTimes,
             all: playerRef
         
@@ -30,6 +30,6 @@
     }
 }
 	angular
-		.module('daBoard')
-		.factory('player', ['$firebaseArray', Player]);
+		.module('myApp')
+		.factory('Player', ['$firebaseArray', Player]);
 })();

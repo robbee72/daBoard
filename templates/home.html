@@ -1,29 +1,37 @@
-<section>
-<div class="col-md-3 sidebar">
-    <div class="header">
-        <h2 class="title">Leaders</h2>
-        <div class="new-leader-board">
-            <button class="btn btn-primary" ng-click="home.openModal()"> New Leaderboard</button>
-        </div>
-    </div>
-        <section class="players-list">
-            <div ng-repeat="player in home.daPlayers" class="leaderPlayers">
-                <a ng-click="home.selectPlayer(player)">{{ player.name }}</a>   
-            </div>
-        </section>
-
+<!DOCTYPE html>
+<html>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     
-</div>
-</section>
+<body>
+    <section>
 
-<div class="col-md-9 daplayer">
-	<h3>{{ home.selectedPlayer.name }}</h3>
-	<table class="table teetime">
-        <tr ng-repeat="teetime in home.teetimes">
-            <td > {{ teetime.name }}</td>
-            <td > {{ teetime.content }}</td>
-            <td > {{ teetime.sentAt }}</td>
-        </tr> 
-    </table>
-	
-</div>
+        <div ng-app="myApp" ng-controller="HomeCtrl" class="col-md-3 sidebar">
+            <div class="header">
+                <h2 class="title">Leaders</h2>
+                <div class="new-da-player">
+                    <button class="btn btn-primary" ng-click="home.openModal()"> New Player</button>
+                </div>
+            </div>
+                <section class="players-list">
+                    <div ng-repeat="player in home.daPlayers" class="daPlayers">
+                        <a ng-click="home.selectPlayer(player)">{{ player.name }}</a>
+                    </div>
+                  </section>
+                 
+            </div>
+        </div>
+
+     </section>
+<!--
+    <div class="col-md-9 daplayer">
+        <h3>{{ home.selectedPlayer.name }}</h3>
+        <table class="table teetime">
+            <tr ng-repeat="teetime in home.teetimes">
+                <td > {{ teetime.content }}</td>
+                <td > {{ teetime.sentAt }}</td>
+            </tr>
+        </table>
+
+    </div>
+-->
+</html>

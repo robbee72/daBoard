@@ -1,11 +1,14 @@
-
+body{
+    overflow:scroll;
+    padding-bottom: 200px;
+  }
 
 .app-heading {
    color: white;
    font-size: 3em;
  }
  
- .da-rooms {
+ .da-players {
   right: 0%;
   width: 15%;
   background: #4E41FF;
@@ -46,7 +49,7 @@
   padding-top: 10px;
 }
 
-.messages {
+.teetimes {
     
     margin-top: 10px;
     align-content: center;

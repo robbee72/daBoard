@@ -1,7 +1,7 @@
 (function() {
     
     //Initialize Firebase
-     var config = {
+     const config = {
         apiKey: "AIzaSyCaQDcPtYwnFpPeYgO7a6aksAwEX4EqiLk",
         authDomain: "daboard-ffc6d.firebaseapp.com",
         databaseURL: "https://daboard-ffc6d.firebaseio.com",
@@ -47,9 +47,6 @@
         
     });
     
-    
-    
-    
     //get elements for player
     const prePlayer = document.getElementById('player');
     
@@ -90,4 +87,5 @@
     dbRefrounds.on('value', snap => {
         prerounds.innerText = JSON.stringify(snap.val(), null, 3);
     });
+
 }());
