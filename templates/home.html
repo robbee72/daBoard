@@ -13,8 +13,8 @@
                 </div>
             </div>
                 <section class="players-list">
-                    <div ng-repeat="player in home.daPlayers" class="daPlayers">
-                        <a ng-click="home.selectPlayer(player)">{{ player.name }}</a>
+                    <div ng-app="myApp" ng-controller="HomeCtrl" ng-repeat="player in home.daPlayers" class="daPlayers">
+                        <a ng-click="Home.selectPlayer(player)">{{ player.name }}</a>
                     </div>
                   </section>
                  
