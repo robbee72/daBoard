@@ -1,37 +1,132 @@
 <!DOCTYPE html>
 <html>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <header>
+    
+        <script     src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+         
+        <style>table, td, tr {
+            border: 1px solid black;
+            max-width: inherit;
+            }       
+         </style>
+    </header>
+    
     
 <body>
     <section>
+        <div ng-app="myApp" ng-controller="homeCtrl">
+        {{ firstName + "  " + lastName }}
+        
 
-        <div ng-app="myApp" ng-controller="HomeCtrl" class="col-md-3 sidebar">
-            <div class="header">
-                <h2 class="title">Leaders</h2>
-                <div class="new-da-player">
-                    <button class="btn btn-primary" ng-click="home.openModal()"> New Player</button>
-                </div>
-            </div>
-                <section class="players-list">
-                    <div ng-repeat="player in home.daPlayers" class="daPlayers">
-                        <a ng-click="home.selectPlayer(player)">{{ player.name }}</a>
-                    </div>
-                  </section>
-                 
-            </div>
+        Name: <input ng-model="name">
+        <h1>Player: {{name}}</h1>
+            
+        Tee Time: <input ng-model="teetime">    
+        <h1>Tee Time: {{teetime}}</h1>    
         </div>
+    </section>    
+    <section>    
+        <div ng-app="myApp" ng-controller="homeCtrl" class="column half">
+                    
+                 
+            </div>         
+             </section>
+              <table  class="card-view-list">
 
+                <table id="myTable">
+                    <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td> 
+                    <td> OUT </td>    
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td> 
+                    <td>  IN   </td>
+                    <td> Total </td>    
+                    </tr>
+                    <tr>
+                    <td>453</td>
+                    <td>395</td>
+                    <td>167</td>
+                    <td>545</td>
+                    <td>455</td>
+                    <td>476</td>
+                    <td>567</td>
+                    <td>213</td>
+                    <td>459</td>
+                    <td>  </td>    
+                    <td>453</td>
+                    <td>335</td>
+                    <td>195</td>
+                    <td>525</td>
+                    <td>155</td>
+                    <td>460</td>
+                    <td>537</td>
+                    <td>490</td>
+                    <td>442</td>    
+                    </tr>
+                          <tr>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>4</td> 
+                    <td> OUT </td>    
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td> 
+                    <td>  IN   </td>
+                    <td> Total </td>    
+                    </tr>
+                    <tr>
+                    <td> <input type="number" ng-model="s1"{{s1}}></td>
+                    <td><input type="number" ng-model="s1"{{s1}}></td>
+                    <td><input type="number" ng-model="s1"{{s1}}></td>
+                    <td><input type="number" ng-model="s1"{{s1}}></td>
+                    <td><input type="number" ng-model="s1"{{s1}}></td>
+                    <td><input type="number" ng-model="s1"{{s1}}></td>
+                    <td><input type="number" ng-model="s1"{{s1}}></td>
+                    <td><input type="number" ng-model="s1"{{s1}}></td>
+                    <td><input type="number" ng-model="s1"{{s1}}></td>
+                    <td>  </td>    
+                    <td>{{\}}</td>
+                    <td>335</td>
+                    <td>195</td>
+                    <td>525</td>
+                    <td>155</td>
+                    <td>460</td>
+                    <td>537</td>
+                    <td>490</td>
+                    <td>442</td>    
+                    </tr>
+                    
+                    
+        
      </section>
-<!--
-    <div class="col-md-9 daplayer">
-        <h3>{{ home.selectedPlayer.name }}</h3>
-        <table class="table teetime">
-            <tr ng-repeat="teetime in home.teetimes">
-                <td > {{ teetime.content }}</td>
-                <td > {{ teetime.sentAt }}</td>
-            </tr>
-        </table>
-
-    </div>
--->
+<script src="/scripts/myApp.js"></script>
+<script src="/scripts/controllers/homeCtrl.js"></script>
+<script src="/scripts/controllers/cardCtrl.js"></script>                  
 </html>
