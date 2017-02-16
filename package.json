@@ -1,8 +1,20 @@
 {
-  "name": "ui",
-  "version": "0.0.1",
+    "name": "daBoard project",
+    "version": "1.0.0",
+    "description": "LeaderBoard",
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/robbee72/daBoard"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+    
   "dependencies": {
-    "grunt-connect-pushstate": "^0.2.0"
+    "grunt-connect-pushstate": "^0.2.0",
+    "angular": "^1.5.8",
+    "angularfire": "^2.0.2"  
   },
   "devDependencies": {
     "connect-modrewrite": "*",

@@ -1,52 +1,14 @@
-(function() {
-    
-    //Initialize Firebase
-     const config = {
-        apiKey: "AIzaSyCaQDcPtYwnFpPeYgO7a6aksAwEX4EqiLk",
-        authDomain: "daboard-ffc6d.firebaseapp.com",
-        databaseURL: "https://daboard-ffc6d.firebaseio.com",
-        storageBucket: "daboard-ffc6d.appspot.com",
-        messagingSenderId: "550561463842"
-  };
- 
-    
-    firebase.initializeApp(config);
-    
-    // GET ELEMENTS 
-    var uploader = document.getElementById('uploader');
-    var fileButton = document.getElementById('fileButton');
-    
-    // Listen for file selection
-    fileButton.addEventListener('change', function(e) {
-        
-    // Get file    
-    var file = e.target.files[0];
-        
-    // Create a storage ref    
-    var storageRef = firebase.storage().ref('players/' + file.name);
-        
-    // Upload file
-    var task = storageRef.put(file);
-    
-    // Update progress bar
-        task.on('state_changed',
-           
-            function progress(snapshot) {
-                var percentage = (snapshot.byteTransferred / snapshot.totalBytes) * 100;
-                uploader.value = percentage;
-                                 
-            },
-            
-            function error(err) {
-            },
-            
-            function complete() {
-        
-            }
-        );    
-        
-    });
-    
+
+
+var app = angular.module("myApp",  []);
+      app.controller('homeCtrl', function($scope) {
+            $scope.name = "name";
+            $scope.teetime = "9:00";
+            $scope.s = "4";
+});
+
+var database = firebase.database();
+
     //get elements for player
     const prePlayer = document.getElementById('player');
     
@@ -59,33 +21,25 @@
         prePlayer.innerText= JSON.stringify(snap.val(), null, 3);
         
     });
-    
-    
-    
-    //get elements for hole number
-    const preholenumber = document.getElementById('holenumber');
-    // Create references
-    const dbRefholenumber = firebase.database().ref().child('holenumber');
-    dbRefholenumber.on('value', snap => {
-        preholenumber.innerText = JSON.stringify(snap.val(), null, 3);
-    });
-    
-    //get elements for tee time
-    const preteetime = document.getElementById('teetime');
-    // Create references
-    const dbRefteetime = firebase.database().ref().child('teetime');
-    //Sync card changes
-    dbRefteetime.on('value', snap => {
-        preteetime.innerText = JSON.stringify(snap.val(), null, 3);
-    });
-    
-    //get elements for Rounds
-    const prerounds = document.getElementById('rounds');
-    // Create references
-    const dbRefrounds = firebase.database().ref().child('rounds');
-    //Sync card changes
-    dbRefrounds.on('value', snap => {
-        prerounds.innerText = JSON.stringify(snap.val(), null, 3);
-    });
 
-}());
+function writeNewPlayer(uid, username, picture, title, body) {
+  // A post entry.
+  var playerData = {
+    author: username,
+    uid: uid,
+    body: body,
+    title: title,
+    starCount: 0
+    
+  };
+
+  // Get a key for a new Post.
+  var newPlayerKey = firebase.database().ref().child('players').push().key;
+
+  // Write the new post's data simultaneously in the posts list and the user's post list.
+  var updates = {};
+  updates['/players/' + newPlayerKey] = playerData;
+  updates['/user-players/' + uid + '/' + newPlayerKey] = playerData;
+
+  return firebase.database().ref().update(updates);
+}

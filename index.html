@@ -1,67 +1,159 @@
 <!DOCTYPE html>
-<html class="no-js" ng-app="myApp"> 
-    <head >
-        <meta charset="utf-8">
-         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title> daboard with angular/firebase</title>
-        <meta name="description" content="">
-        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-        <link rel="stylesheet" href="styles/css/style.css">
-        <script src="js/build/libs.js"></script>
-        <script src="https://cdn.firebase.com/v0/firebase.js"></script>
-        <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
-        <script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.js"></script>
-        <script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.2.1/firebase-simple-login.js'></script>
-            
-        <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
-
-    </head>
-    <body>
-        <div class="row">
-            <div class="small-12 columns">
-                <h1><i class="fa fa-archive"></i> AngularFire CRUD</h1>
-            </div>
-        </div>
-          <div ng-view></div>
+<html>
+    <header>
+           
+        <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyCaQDcPtYwnFpPeYgO7a6aksAwEX4EqiLk",
+            authDomain: "daboard-ffc6d.firebaseapp.com",
+            databaseURL: "https://daboard-ffc6d.firebaseio.com",
+            storageBucket: "daboard-ffc6d.appspot.com",
+            messagingSenderId: "550561463842"
+          };
+          firebase.initializeApp(config);
+        
+        // Get a reference to the database service
+            var database = firebase.database();        
+        </script>
+        
+        <script     src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase-database.js"></script>
+        
+        <style>table, td, tr {
+            border: 1px solid black;
+            max-width: inherit;
+            }       
+         </style>
+    </header>
     
+    
+<body>
+    
+        <pre id="player"></pre>
+        <pre id="holenumber"></pre>
+        <pre id="teetime"></pre>
+        <pre id="rounds"></pre>
+    
+    
+    <section>
+        <div ng-app="myApp" ng-controller="homeCtrl">
+        {{ firstName + "  " + lastName }}
         
-      <h2> Upload to firebase storage</h2>
-        <br>
+
+        Name: <input ng-model="name">
+        <h1>Player: {{name}}</h1>
+            
+        Tee Time: <input ng-model="teetime">    
+        <h1>Tee Time: {{teetime}}</h1>    
+        </div>
+    </section>    
+    <section>    
+        <div ng-app="myApp" ng-controller="homeCtrl" class="column half">
+                    
+                 
+            </div>         
+             </section>
+              <table  class="card-view-list">
+
+                <table id="myTable">
+                    <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td> 
+                    <td> OUT </td>    
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td> 
+                    <td>  IN   </td>
+                    <td> Total </td>    
+                    </tr>
+                    <tr>
+                    <td>453</td>
+                    <td>395</td>
+                    <td>167</td>
+                    <td>545</td>
+                    <td>455</td>
+                    <td>476</td>
+                    <td>567</td>
+                    <td>213</td>
+                    <td>459</td>
+                    <td>  </td>    
+                    <td>453</td>
+                    <td>335</td>
+                    <td>195</td>
+                    <td>525</td>
+                    <td>155</td>
+                    <td>460</td>
+                    <td>537</td>
+                    <td>490</td>
+                    <td>442</td>    
+                    </tr>
+                          <tr>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>4</td> 
+                    <td> OUT </td>    
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td> 
+                    <td>  IN   </td>
+                    <td> Total </td>    
+                    </tr>
+                    <tr>
+                    <td> <input type="number" ng-model="s1"{{s1}}></td>
+                    <td><input type="number" ng-model="s1"{{s1}}></td>
+                    <td><input type="number" ng-model="s1"{{s1}}></td>
+                    <td><input type="number" ng-model="s1"{{s1}}></td>
+                    <td><input type="number" ng-model="s1"{{s1}}></td>
+                    <td><input type="number" ng-model="s1"{{s1}}></td>
+                    <td><input type="number" ng-model="s1"{{s1}}></td>
+                    <td><input type="number" ng-model="s1"{{s1}}></td>
+                    <td><input type="number" ng-model="s1"{{s1}}></td>
+                    <td>  </td>    
+                    <td>{{\}}</td>
+                    <td>335</td>
+                    <td>195</td>
+                    <td>525</td>
+                    <td>155</td>
+                    <td>460</td>
+                    <td>537</td>
+                    <td>490</td>
+                    <td>442</td>    
+                    </tr>
+                    
+                    
         
-        <progress value="0" max="100" id="uploader">0%</progress>
-        <input type="file" value="upload" id="fileButton" />
-       
-  
-        <pre id="player">1</pre>
-        <pre id="holenumber">2</pre>
-        <pre id="teetime">3</pre>
-        <pre id="rounds">4</pre>
-        
-        <script src="js/src/app.js"></script>
-        <script src="js/build/controllers.js"></script>
-        <script src="js/build/services.js"></script>
-
-<!--
-        
-        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-        <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
--->
-<!--        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.3/ui-bootstrap-tpls.min.js"></script>-->
-
-        <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.13/angular-ui-router.min.js"></script>
-
-<!--        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular-cookies.js"></script>-->
-
-      
-        <script src="/scripts/app.js"></script>
-        <script src="/scripts/controllers/HomeCtrl.js"></script> 
-        <script src="/scripts/controllers/ModalCtrl.js"></script>
-        <script src="/scripts/services/Player.js"></script>
-        <script src="/scripts/services/Modal.js"></script>
-
-    </body>
+     </section>
+ 
+<script src="/scripts/app.js"></script>
+<script src="/scripts/controllers/homeCtrl.js"></script>
+<script src="/scripts/controllers/cardCtrl.js"></script>  
+<script src="/scripts/services/home.js"></script>                  
 </html>

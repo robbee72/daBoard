@@ -103,8 +103,8 @@
                     </tr>
                     <tr>
                     <td> <input type="number" ng-model="s1"{{s1}}></td>
-                    <td><input type="number" ng-model="s1"{{s1}}></td>
-                    <td><input type="number" ng-model="s1"{{s1}}></td>
+                    <td><input type="number" ng-model="s2"{{s1}}></td>
+                    <td><input type="number" ng-model="s3"{{s1}}></td>
                     <td><input type="number" ng-model="s1"{{s1}}></td>
                     <td><input type="number" ng-model="s1"{{s1}}></td>
                     <td><input type="number" ng-model="s1"{{s1}}></td>
@@ -126,7 +126,18 @@
                     
         
      </section>
+       <script>           //Initialize Firebase
+     const config = {
+        apiKey: "AIzaSyCaQDcPtYwnFpPeYgO7a6aksAwEX4EqiLk",
+        authDomain: "daboard-ffc6d.firebaseapp.com",
+        databaseURL: "https://daboard-ffc6d.firebaseio.com",
+        storageBucket: "daboard-ffc6d.appspot.com",
+        messagingSenderId: "550561463842"
+  };
+    
+           </script> 
 <script src="/scripts/myApp.js"></script>
 <script src="/scripts/controllers/homeCtrl.js"></script>
-<script src="/scripts/controllers/cardCtrl.js"></script>                  
+<script src="/scripts/controllers/cardCtrl.js"></script>  
+<script src="/scripts/services/home.js"></script>                  
 </html>
